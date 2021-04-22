@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99DB013D-3C2F-41A3-A090-E1E7A9FE6D4A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PokemonClone</RootNamespace>
+    <AssemblyName>PokemonClone</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Actor\Camera.cs" />
+    <Compile Include="Actor\Character.cs" />
+    <Compile Include="Actor\CharaterCollision.cs" />
+    <Compile Include="Actor\Party.cs" />
+    <Compile Include="Actor\Player.cs" />
+    <Compile Include="Actor\CharacterAnimation.cs" />
+    <Compile Include="Actor\PlayerInput.cs" />
+    <Compile Include="Actor\CharacterMovement.cs" />
+    <Compile Include="Actor\Trainer.cs" />
+    <Compile Include="BattleSystem\AnimationManager.cs" />
+    <Compile Include="BattleSystem\Battle.cs" />
+    <Compile Include="BattleSystem\BattleState\ChangeTurn.cs" />
+    <Compile Include="BattleSystem\BattleState\End.cs" />
+    <Compile Include="BattleSystem\BattleState\Intro.cs" />
+    <Compile Include="BattleSystem\BattleState\OpponentTurn.cs" />
+    <Compile Include="BattleSystem\BattleState\PlayerTurn.cs" />
+    <Compile Include="BattleSystem\BattleState\SelectAction.cs" />
+    <Compile Include="BattleSystem\BattleState\SelectMove.cs" />
+    <Compile Include="BattleSystem\CombatTextManager.cs" />
+    <Compile Include="Engine\Tile.cs" />
+    <Compile Include="Model\IEvent.cs" />
+    <Compile Include="Model\IState.cs" />
+    <Compile Include="Model\IVisible.cs" />
+    <Compile Include="PokemonData\HealthBar.cs" />
+    <Compile Include="PokemonData\Move.cs" />
+    <Compile Include="PokemonData\Pokemon.cs" />
+    <Compile Include="PokemonData\PokemonExperience.cs" />
+    <Compile Include="PokemonData\PokemonStats.cs" />
+    <Compile Include="PokemonData\SpriteSet.cs" />
+    <Compile Include="PokemonData\Type.cs" />
+    <Compile Include="Engine\Animation.cs" />
+    <Compile Include="Engine\DialogBox.cs" />
+    <Compile Include="Model\IEntity.cs" />
+    <Compile Include="Engine\SpriteBatchExtention.cs" />
+    <Compile Include="Engine\Sprite.cs" />
+    <Compile Include="Engine\Label.cs" />
+    <Compile Include="Engine\TextureRegion.cs" />
+    <Compile Include="Engine\Layer.cs" />
+    <Compile Include="Engine\Timer.cs" />
+    <Compile Include="Engine\Utility.cs" />
+    <Compile Include="GameUI\GUI.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screen\BattleScreen.cs" />
+    <Compile Include="Model\IScreen.cs" />
+    <Compile Include="Screen\Transition.cs" />
+    <Compile Include="Screen\World.cs" />
+    <Compile Include="SelectionBox.cs" />
+    <Compile Include="Setting.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Extended, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MonoGame.Extended.3.8.0\lib\netstandard2.0\MonoGame.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Extended.Graphics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MonoGame.Extended.Graphics.3.8.0\lib\netstandard2.0\MonoGame.Extended.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework, Version=3.8.0.1641, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MonoGame.Framework.WindowsDX.3.8.0.1641\lib\net452\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.4.0.1\lib\net45\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Direct2D1.4.0.1\lib\net45\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Direct3D11.4.0.1\lib\net45\SharpDX.Direct3D11.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D9, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Direct3D9.4.0.1\lib\net45\SharpDX.Direct3D9.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.DXGI.4.0.1\lib\net45\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Mathematics.4.0.1\lib\net45\SharpDX.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.MediaFoundation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.MediaFoundation.4.0.1\lib\net45\SharpDX.MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XAudio2, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.XAudio2.4.0.1\lib\net45\SharpDX.XAudio2.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XInput, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.XInput.4.0.1\lib\net45\SharpDX.XInput.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="app.config" />
+    <None Include="Content\action_selection_box.xnb" />
+    <None Include="Content\Actor\red_test.xnb" />
+    <None Include="Content\Actor\red_walking.xnb" />
+    <None Include="Content\Actor\team_rocket_walk.xnb" />
+    <None Include="Content\Battle\combat_dialogbox.xnb" />
+    <None Include="Content\Battle\grass_background.xnb" />
+    <None Include="Content\Battle\normal_background.xnb" />
+    <None Include="Content\Battle\opponent_battle_frame.xnb" />
+    <None Include="Content\Battle\opponent_pokemon_bar.xnb" />
+    <None Include="Content\Battle\player_battle_frame.xnb" />
+    <None Include="Content\Battle\player_pokemon_bar.xnb" />
+    <None Include="Content\Battle\poison_background.xnb" />
+    <None Include="Content\Battle\pokeball_icon.xnb" />
+    <None Include="Content\black_menu.xnb" />
+    <None Include="Content\Color\black.xnb" />
+    <None Include="Content\Color\green.xnb" />
+    <None Include="Content\Color\health_bar_color.xnb" />
+    <None Include="Content\Color\red.xnb" />
+    <None Include="Content\Color\yellow.xnb" />
+    <None Include="Content\cursor.xnb" />
+    <None Include="Content\dialog_box.xnb" />
+    <None Include="Content\dialog_box01.xnb" />
+    <None Include="Content\Font\default.xnb" />
+    <None Include="Content\Font\pokemon.xnb" />
+    <None Include="Content\Npc\bug_battle_sprite.xnb" />
+    <None Include="Content\Npc\gary_battle_sprite.xnb" />
+    <None Include="Content\Npc\red_battle_sprite.xnb" />
+    <None Include="Content\pokeball.xnb" />
+    <None Include="Content\Pokemon\Back\bulbasaur_back.xnb" />
+    <None Include="Content\Pokemon\Back\charizard_back.xnb" />
+    <None Include="Content\Pokemon\Back\tyranitar_back.xnb" />
+    <None Include="Content\Pokemon\Front\charizard_front.xnb" />
+    <None Include="Content\Pokemon\Front\charmander_front.xnb" />
+    <None Include="Content\Pokemon\Front\tyranitar_front.xnb" />
+    <None Include="Content\selection_move_box.xnb" />
+    <None Include="Content\small_house.xnb" />
+    <None Include="Content\TileSet\flower_tileset.xnb" />
+    <None Include="Content\TileSet\grass_tileset.xnb" />
+    <None Include="Content\TileSet\object.xnb" />
+    <None Include="Content\TileSet\tree_tileset.xnb" />
+    <None Include="Content\TileSet\yellow_ground.xnb" />
+    <None Include="Content\white_rectangle.xnb" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Engine\TileMap\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <Import Project="packages\MonoGame.Framework.WindowsDX.3.8.0.1641\build\MonoGame.Framework.WindowsDX.targets" Condition="Exists('packages\MonoGame.Framework.WindowsDX.3.8.0.1641\build\MonoGame.Framework.WindowsDX.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\MonoGame.Framework.WindowsDX.3.8.0.1641\build\MonoGame.Framework.WindowsDX.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MonoGame.Framework.WindowsDX.3.8.0.1641\build\MonoGame.Framework.WindowsDX.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
