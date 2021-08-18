@@ -110,6 +110,18 @@
 /processorParam:TextureFormat=Color
 /build:Actor/team_rocket_walk.png
 
+#begin Audio/Soundtracks/trainer_battle.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Soundtracks/trainer_battle.wav
+
+#begin Audio/Soundtracks/viridian_forest.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Soundtracks/viridian_forest.wav
+
 #begin Battle/combat_dialogbox.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -181,6 +193,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Battle/poison_background.png
+
+#begin Battle/pokeball_particle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Battle/pokeball_particle.png
+
+#begin Battle/spritesheet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Battle/spritesheet.png
 
 #begin black_menu.png
 /importer:TextureImporter
@@ -328,7 +364,7 @@
 /processorParam:TextureFormat=Color
 /build:Npc/gary_battle_sprite.png
 
-#begin Npc/red_battle_sprite.png
+#begin Npc/RedBattleSprites/red_battle_sprite_00.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -338,7 +374,55 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Npc/red_battle_sprite.png
+/build:Npc/RedBattleSprites/red_battle_sprite_00.png
+
+#begin Npc/RedBattleSprites/red_battle_sprite_01.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Npc/RedBattleSprites/red_battle_sprite_01.png
+
+#begin Npc/RedBattleSprites/red_battle_sprite_02.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Npc/RedBattleSprites/red_battle_sprite_02.png
+
+#begin Npc/RedBattleSprites/red_battle_sprite_03.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Npc/RedBattleSprites/red_battle_sprite_03.png
+
+#begin Npc/RedBattleSprites/red_battle_sprite_04.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Npc/RedBattleSprites/red_battle_sprite_04.png
 
 #begin pokeball.png
 /importer:TextureImporter

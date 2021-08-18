@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonClone.Engine;
+using PokemonClone.Engine.Components;
 using PokemonClone.Model;
 
 namespace PokemonClone.PokemonData
@@ -11,6 +12,8 @@ namespace PokemonClone.PokemonData
         private Pokemon pokemon;
         private Sprite frontBar;
         private Sprite backBar;
+        private int finalWidth = 0;
+        public bool IsFinished { get; private set; } = false;
 
         public HealthBar(Pokemon pokemon, Sprite frontBar)
         {
@@ -21,14 +24,24 @@ namespace PokemonClone.PokemonData
         public void LoadContent(ContentManager content)
         {
             backBar = new Sprite(content.Load<Texture2D>("Color\\black"),
-                new Rectangle(frontBar.Rectangle.X, frontBar.Rectangle.Y, frontBar.Rectangle.Width, frontBar.Rectangle.Height));
+                new Rectangle(frontBar.Rectangle.X, frontBar.RectangleY, frontBar.RectangleWidth, frontBar.RectangleHeight));
         }
 
         public void Update(GameTime gameTime)
         {
-            int width = backBar.Rectangle.Width * pokemon.PokemonStats.CurrentHp / pokemon.PokemonStats.Hp;
+            IsFinished = false;
+            //Update hp bar overtime
+            int width = backBar.RectangleWidth * pokemon.PokemonStats.CurrentHp / pokemon.PokemonStats.Hp;
 
-            frontBar.Rectangle = new Rectangle(frontBar.RectangleX, frontBar.RectangleY, width, frontBar.Rectangle.Height);
+            if (frontBar.RectangleWidth != width)
+            {
+                frontBar.Rectangle = new Rectangle(frontBar.RectangleX, frontBar.RectangleY, frontBar.Rectangle.Width - 1, frontBar.Rectangle.Height);
+            }
+            else
+            {
+                IsFinished = true;
+            }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -40,8 +53,8 @@ namespace PokemonClone.PokemonData
 
         public void SetVisibility(bool visible)
         {
-            frontBar.SetVisibility(visible);
-            backBar.SetVisibility(visible);
+            frontBar.IsVisible = visible;
+            backBar.IsVisible = visible;
         }
     }
 }

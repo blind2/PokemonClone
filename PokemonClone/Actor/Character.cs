@@ -50,7 +50,7 @@ namespace PokemonClone.Actor
                 return position;
             }
 
-            return position; //Retourne la position sans avoir avancer
+            return position; //Retourne la Position sans avoir avancer
         }
 
         public abstract void ChangerDirection(GameTime gameTime);

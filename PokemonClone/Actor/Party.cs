@@ -11,8 +11,7 @@ namespace PokemonClone.Actor
 
         public Party()
         {
-            listPokemon = new List<Pokemon>();
-           
+            listPokemon = new List<Pokemon>();      
         }
 
         public void addPokemon(Pokemon pokemon)
@@ -21,6 +20,10 @@ namespace PokemonClone.Actor
             currentPokemon = listPokemon[index];
         }
 
+        /// <summary>
+        /// Remove a pokemon from the party
+        /// </summary>
+        /// <param name="pokemon">pokemon to remove</param>
         public void removePokemon(Pokemon pokemon)
         {
             listPokemon.Remove(pokemon);

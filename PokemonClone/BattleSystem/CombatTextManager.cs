@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using PokemonClone.Engine;
 
 namespace PokemonClone.BattleSystem
 {
@@ -16,24 +17,18 @@ namespace PokemonClone.BattleSystem
 
         private void BattleCombatText()
         {
-
-            messageDictionary.Add("intro", "RIVAL GARY\nwould like to battle !");
-            messageDictionary.Add("OpponentSendPokemon", "RIVAL GARY send out\n" + battle.opponentPokemon.PokemonStats.Name.ToUpper() + " !");
-            messageDictionary.Add("PlayerSendPokemon", "Go ! " + battle.playerPokemon.PokemonStats.Name.ToUpper() + " !");
-            messageDictionary.Add("SelectOption", "What will\n" + battle.playerPokemon.PokemonStats.Name.ToUpper() + " do ?");
-            messageDictionary.Add("PlayerPokemonAttack", battle.playerPokemon.PokemonStats.Name.ToUpper() + " used\n" + battle.playerPokemon.listMove[0].Name.ToUpper());
-            messageDictionary.Add("OpponentPokemonAttck", battle.opponentPokemon.PokemonStats.Name + " used " + battle.opponentPokemon.listMove[0].Name.ToUpper());
-            messageDictionary.Add("OpponentPokemonDeath", "Foe " + battle.opponentPokemon.PokemonStats.Name.ToUpper() + "\nfainted !");
-            messageDictionary.Add("End", "You have beat Gary");
+            /*
+            battle.combatDialogBox.AddText("RIVAL GARY\nwould like to battle !");
+            battle.combatDialogBox.AddText("RIVAL GARY send out\n" + battle.OpponentPokemon.PokemonStats.Name.ToUpper() + " !");
+            battle.combatDialogBox.AddText("Go ! " + battle.PlayerPokemon.PokemonStats.Name.ToUpper() + " !");
+            battle.combatDialogBox.AddText("What will\n" + battle.PlayerPokemon.PokemonStats.Name.ToUpper() + " do ?");
+            battle.combatDialogBox.AddText(battle.PlayerPokemon.PokemonStats.Name.ToUpper() + " used\n" + battle.PlayerPokemon.listMove[0].Name.ToUpper());
+            battle.combatDialogBox.AddText(battle.OpponentPokemon.PokemonStats.Name + " used " + battle.OpponentPokemon.listMove[0].Name.ToUpper());
+            battle.combatDialogBox.AddText("Foe "+ battle.OpponentPokemon.PokemonStats.Name.ToUpper() + "\nfainted !");
+            battle.combatDialogBox.AddText("You have beat Gary");
+            */
         }
 
-
-        public void UseText(string name)
-        {
-
-            battle.dialogBox.GetDialog(messageDictionary[name]);
-
-        }
 
     }
 }

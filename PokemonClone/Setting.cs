@@ -12,8 +12,8 @@ namespace PokemonClone
         public const float Scale = 3f;
         public const float ScaledTileSize = TileSize * Scale;
         public const int ScreenWidth = 800;
-        public const int ScreenHeight = 525;
+        public const int ScreenHeight = 480;
         public const int MaxPokemonParty = 6;
-        public const int PokemonSpriteSize = 175;
+        public const int PokemonSpriteSize = 200;
     }
 }

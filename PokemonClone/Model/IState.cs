@@ -1,11 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PokemonClone.Enums;
 
 namespace PokemonClone.Model
 {
@@ -13,6 +9,9 @@ namespace PokemonClone.Model
     {
         void Update(GameTime gameTime);
         void GoToNextState();
-     
+
+        void LoadContent(ContentManager content);
+        void Draw(SpriteBatch spriteBtach);
+       
     }
 }

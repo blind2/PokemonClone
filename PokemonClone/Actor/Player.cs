@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonClone.Engine;
+using PokemonClone.Inputs;
 using PokemonClone.PokemonData;
 using PokemonClone.Screen;
 using Type = PokemonClone.PokemonData.Type;

@@ -14,11 +14,14 @@ namespace PokemonClone.Screen
         private Pokemon bulbasaur;
         private Pokemon tyranitar;
         private Battle battle;
+        private BattleView battleView;
+        private BattleText battleText;
+        private AnimationManager animationManager;
 
         public void Initialize()
         {
+
            
-         
         }
 
         public void LoadContent(ContentManager content)
@@ -34,10 +37,13 @@ namespace PokemonClone.Screen
             bulbasaur.addMove(new Move("Tackle", 40, 100, 35, Type.Normal));
             bulbasaur.addMove(new Move("Vine Whip", 45, 100, 25, Type.Grass));
             tyranitar.addMove(new Move("Flamethrower", 90, 100, 10, Type.Fire));
-
-            battle = new Battle(bulbasaur, tyranitar);
-
+            battleView = new BattleView(bulbasaur, tyranitar);
+            battleView.LoadContent(content);
+            battle = new Battle(battleView);
             battle.LoadContent(content);
+            animationManager = new AnimationManager(battleView);
+            
+            battleText = new BattleText(battleView);
 
         }
 
@@ -49,13 +55,16 @@ namespace PokemonClone.Screen
         public void Update(GameTime gameTime)
         {
           
-           battle.Update(gameTime);
+            battleView.Update(gameTime);
+            battle.Update(gameTime);
            
         }
         public void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointWrap, null, null, null, null);
+            battleView.Draw(spriteBatch);
             battle.Draw(spriteBatch);
+            spriteBatch.End();         
         }
-
     }
 }

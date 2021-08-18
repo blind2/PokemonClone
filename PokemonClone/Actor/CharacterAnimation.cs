@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonClone.Engine;
+using PokemonClone.Engine.Animations;
 
 namespace PokemonClone.Actor
 {

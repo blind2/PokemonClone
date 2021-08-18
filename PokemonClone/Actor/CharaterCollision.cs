@@ -2,6 +2,7 @@
 using PokemonClone.Engine;
 using PokemonClone.Screen;
 using System;
+using PokemonClone.Engine.MapEditor;
 
 namespace PokemonClone.Actor
 {
@@ -31,7 +32,7 @@ namespace PokemonClone.Actor
             {
                 var map = world.tileMap.ToArray();
 
-                foreach (Tile tile in map[i].tileList)
+                foreach (Tile tile in map[i].TileList)
                 {
 
                     characterNextStep = new Vector2((float)roundX + x, (float)roundY + y);

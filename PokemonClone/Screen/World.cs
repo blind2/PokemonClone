@@ -7,7 +7,11 @@ using PokemonClone.GameUI;
 using PokemonClone.Model;
 using System;
 using System.Collections.Generic;
-
+using PokemonClone.Components;
+using PokemonClone.Engine.Components;
+using PokemonClone.Engine.MapEditor;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace PokemonClone.Screen
 {
@@ -25,6 +29,7 @@ namespace PokemonClone.Screen
         private DialogBox dialogBox;
         private GUI gui;
         private Sprite smallHouse;
+        private SoundEffect sound;
 
         public List<Layer> tileMap;
      
@@ -36,6 +41,7 @@ namespace PokemonClone.Screen
             trainerList = new List<Trainer>();
             tileMap = new List<Layer>();
             gui = new GUI();
+            
         }
 
         public void Initialize()
@@ -52,7 +58,9 @@ namespace PokemonClone.Screen
             TextureRegion flowerTilset = new TextureRegion(content.Load<Texture2D>("TileSet\\flower_tileset"), 16, 16);
             TextureRegion worldObjectTileset = new TextureRegion(content.Load<Texture2D>("TileSet\\object"), 16, 16);
             smallHouse = new Sprite(content.Load<Texture2D>("small_house"), new Rectangle(212,45,73,65));
+
             
+
             camera = new Camera();
             player = new Player(this, playerTexture, new Vector2(32, 64));
             player.GetParty(content);
@@ -76,6 +84,12 @@ namespace PokemonClone.Screen
 
             tileMap.Add(treeLayer);
             tileMap.Add(worldObjectLayer);
+
+            sound = content.Load<SoundEffect>("Audio\\Soundtracks\\trainer_battle");
+            sound.Play();
+            
+
+           
 
         }
 

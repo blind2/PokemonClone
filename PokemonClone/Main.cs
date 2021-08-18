@@ -19,13 +19,27 @@ namespace PokemonClone
         public static World world;
         public static  BattleScreen battleScreen;
         public static  IScreen screen;
+        
 
         public Main()
         {
             graphics = new GraphicsDeviceManager(this);
+            
             Content.RootDirectory = "Content";
             graphics.PreferredBackBufferWidth = Setting.ScreenWidth;
             graphics.PreferredBackBufferHeight = Setting.ScreenHeight;
+            //graphics.IsFullScreen = true;
+            Window.AllowUserResizing = true;
+            Window.ClientSizeChanged += Window_ClientSizeChanged;
+            graphics.ApplyChanges();
+           
+          
+        }
+
+        private void Window_ClientSizeChanged(object sender, System.EventArgs e)
+        {
+            graphics.PreferredBackBufferWidth = Window.ClientBounds.Width;
+            graphics.PreferredBackBufferHeight = Window.ClientBounds.Height;
             graphics.ApplyChanges();
         }
 
@@ -58,7 +72,7 @@ namespace PokemonClone
             battleScreen.LoadContent(Content);
             world.LoadContent(Content);
 
-            
+     
 
         }
 
@@ -104,6 +118,7 @@ namespace PokemonClone
             GraphicsDevice.Clear(Color.Black);
             screen.Draw(spriteBatch);
             base.Draw(gameTime);
+           
         }
     }
 }
